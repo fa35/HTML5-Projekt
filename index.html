@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>HomeControlFX</title>
-    <meta charset="utf-8">
-</head>
+    <head>
+        <title>HomeControlFX</title>
+        <meta charset="utf-8">
+    </head>
     <!-- git repository: https://github.com/fa35/HTML5-Projekt -->
-<body>
-<div class="header">
-    Meine Hütte
-</div>
-<div class="section">
-    <h1>Beleuchtung</h1>
-    <div class="element">
-        <label>Licht <button>AN</button></label>
-    </div>
-    <div class="element">
-        <label>Helligkeit</label>
-    </div>
-    <div class="element">
-        <label>Farbtemperatur</label>  
-    </div>
-</div>
-<div class="section">
-    <h1>Heizung</h1>
-    <div class="element">
-        <label>Temperatur</label>
-    </div>
-    <div class="element">
-        <label>Min.:</label>
-    </div>
-    <div class="element">
-        <label>Temperatur absenken? <input type="checkbox"></label>
-    </div>
-</div>
-<div class="section">
-    <h1>Kaffeemaschine</h1>
-    <div class="element">
-        <label>Füllstand</label>
-    </div>
-</div>
-<div class="footer">
-    <button>Einstellungen</button><button>Aktualisieren</button>
-</div>
-</body>
+    <body>
+        <header>
+            Meine Hütte
+        </header>
+        <form method="post" action="http://192.168.34.40/checkme/" name="homefx_form" id="homefx_form">
+            <details open>
+                <summary>Beleuchtung</summary>
+                <div class="element">
+                    <label>Licht <input name="lightState" type="checkbox" checked /></label>
+                </div>
+                <div class="element">
+                    <label>Helligkeit <input name="lightBrightness" type="range" step="1" value="75" max="100" /></label>
+                </div>
+                <div class="element">
+                    <label>Farbtemperatur <input type="color" name="lightColor" value="#FFFF99"> </label>
+                </div>
+            </details>
+            <details open>
+                <summary>Heizung</summary>
+                <div class="element">
+                    <label>Temperatur <input name="heatCurrent" readonly value="23.7"></label>
+                </div>
+                <div class="element">
+                    <label>Min.: <input name="heatWanted" type="number" value="20.0"></label>
+                </div>
+                <div class="element">
+                    <label>Temperatur absenken? <input name="heatAuto" type="checkbox" checked></label>
+                </div>
+            </details>
+            <details open>
+                <summary>Kaffeemaschine</summary>
+                <div class="element">
+                    <label>Füllstand <meter value=66 max=100> </meter></label>
+                </div>
+            </details>
+        </form>
+        <footer>
+            <button>Einstellungen</button><button type="submit" form="homefx_form">Aktualisieren</button>
+        </footer>
+    </body>
 </html>
