@@ -1,0 +1,32 @@
+* {
+    font-family: sans-serif;
+}
+
+.padded {
+    padding: 5px;
+}
+
+header, footer {
+    background-color: darkblue;
+    color: white;
+}
+
+details {
+    padding-left: 10px;
+}
+
+summary{
+    background-color: lightblue;
+    color: white;
+    font-weight: bold;
+    display: block;
+    margin-left: -5px;
+}
+label {
+    display: block;
+    margin: 5px;
+    padding: 5px;
+}
+input {
+    float: right;
+}
