@@ -3,6 +3,7 @@
     <head>
         <title>HomeControlFX</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <script type="text/javascript" charset="utf-8" src="js/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/script.js"></script>
@@ -12,7 +13,7 @@
         <header class="padded">
             Meine Hütte
         </header>
-        <form method="post" action="http://192.168.34.40/checkme/" name="homefx_form" id="homefx_form">
+        <form method="post" action="http://localhost:8080" name="homefx_form" id="homefx_form">
             <details open>
                 <summary class="padded">Beleuchtung</summary>
                 <div class="element">
@@ -45,8 +46,31 @@
                 </div>
             </details>
         </form>
+
+        <!-- Dialog für die Server-IP-Adresse / Bitte in eigene HTML-Datei übernehmen -->
+        <div id="dialogServer" class="dialog">
+            <h2>Server konfigurieren</h2>
+            <div class="ui-field-contain">
+                <label for="tfdIpAdress">Bitte geben Sie die IP-Adresse des Servers ein:</label><br /><input id="tfdIpAdress" type="text" ><br />
+                <div class="buttonBar">
+                    <button type="button" id="setServer">OK</button>
+                    <button type="button" id="cancelServer" class="simplemodal-close">Abbrechen</button></div>
+            </div>
+        </div>
+
+        <!-- Dialog für die erste Begrüßung / Bitte in eigene HTML-Datei übernehmen -->
+        <div id="dialogWelcome" class="dialog">
+            <h2>Herzlich Willkommen</h2>
+            <p>Willkommen bei HomeControl Pro!</p>
+            <div class="ui-field-contain">
+                <div class="buttonBar">                        
+                    <button type="button" id="closeWelcome" class="simplemodal-close">Schließen</button>
+                </div>
+            </div>
+        </div>
+        
         <footer class="padded">
-            <button>Einstellungen</button><button type="submit" form="homefx_form">Aktualisieren</button>
+            <button id="configButton">Einstellungen</button><button type="submit" form="homefx_form">Aktualisieren</button>
         </footer>
         <script type="text/javascript" charset="utf-8" src="js/details.js"></script>
     </body>
