@@ -30,3 +30,24 @@ label {
 input {
     float: right;
 }
+
+#dialogServer {
+    display: none;
+}
+
+div.dialog {
+    opacity: 0.9;
+    position: absolute;
+    top: 30%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.dialog h2 {
+    background: linear-gradient(to right, rgb(0,0,102), rgb(153,153,255));
+}
+
+.dialog input {
+    float: unset;
+}
